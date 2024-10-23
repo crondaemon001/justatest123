@@ -23,6 +23,9 @@ DB_PASSWORD=mydbpassword
 API_KEY=myapikey
 API_SECRET=myapisecret
 
+print(DB_USERNAME)
+print(DB_PASSWORD)
+
 username = "abogususerid"
 password = "aboguspassword"
 
