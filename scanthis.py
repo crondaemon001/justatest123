@@ -11,6 +11,13 @@ The FizzBuzz problem requires printing numbers from 1 to n, but with the followi
 # https://github.com/Collinear-Group/sdpdev/settings/security_analysis
 # Dependabot should generate some notifications from the next couple of lines:
 
+VARIABLE=VALUE
+ENVIRONMENT=PRODUCTION
+DB_USERNAME=mydbuser
+DB_PASSWORD=mydbpassword
+API_KEY=myapikey
+API_SECRET=myapisecret
+
 username = "abogususerid"
 password = "aboguspassword"
 
