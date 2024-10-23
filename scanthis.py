@@ -12,6 +12,10 @@ The FizzBuzz problem requires printing numbers from 1 to n, but with the followi
 # https://github.com/Collinear-Group/sdpdev/settings/security_analysis
 # Dependabot should generate some notifications from the next couple of lines:
 
+# Here's something that should trigger in scans, a github token that is revoked already.
+
+GITHUB_TOKEN=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
+
 VARIABLE=VALUE
 ENVIRONMENT=PRODUCTION
 DB_USERNAME=mydbuser
