@@ -21,7 +21,7 @@ ENVIRONMENT=PRODUCTION
 DB_USERNAME=mydbuser
 DB_PASSWORD=mydbpassword
 API_KEY=myapikey
-API_SECRET=myapisecret
+API_SECRET=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
 
 print(DB_USERNAME)
 print(DB_PASSWORD)
