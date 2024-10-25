@@ -47,3 +47,8 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:5000']
+
+  - job_name: 'flask-app-via-docker'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:8080']
