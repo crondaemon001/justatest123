@@ -1,7 +1,7 @@
 
 This repo contains a few scripts demonstrating poor code that should trigger security alerts, dependencies which should be scanned and reported, and simple metrics observability with Prometheus.
 
-== Setting up a local environment
+## Setting up a local environment
 
 To run these locally, you will need to have installed:
  - Docker Desktop
@@ -9,7 +9,7 @@ To run these locally, you will need to have installed:
  - Some git client
     - For a GUI interface, Github Desktop and Fork are good choices.
 
-== Build and Run the Docker image
+## Build and Run the Docker image
 
 Build an image with `docker build -t justatest .`
 
@@ -17,9 +17,9 @@ Run the image with `docker run -it -p 8080:5000/tcp justatest bash -c 'cd /app;.
 
 This will automatically initialize the `promtest.py` python script, which starts up a flask server on port 5000 in the docker container, accessible from `localhost:8080` on your local machine.
 
-Accesing the `localhost:8080/` and 'localhost:8080/other` endpoints will create OTel events, which prometheus can observe.  You can also go to `localhost:8080/events` to see the metrics directly.
+Accesing the `localhost:8080/` and `localhost:8080/other` endpoints will create OTel metrics, which prometheus can observe.  You can also go to `localhost:8080/events` to see the metrics directly.
 
-== Observing with Prometheus
+## Observing with Prometheus
 
 After installing Prometheus in your local environment, run it with 
 
@@ -29,7 +29,7 @@ The configuration will tell prometheus to monitor the `/metrics` endpoint on `lo
 
 A prometheus GUI will be hosted on `localhost:9090`.  You can type in the event box to select events to montor, and select the "Graph" tab to graph them.  The `view_main_total` metric is associated with the viewcount for the main page (`localhost:8080/`), and the `view_other_total` metric is associated with the `localhost:8080/other` page.  Additionally, the `random_metric` metric is fed by a random number which updates every few seconds.
 
-== Code scanning
+## Code scanning
 
 This repo (crondaemon001/justatest123) is setup with GitHub actions to monitor and track security issues with committed code and image builds.  Check the Security tab to see enabled security options, and the Code Scanning section to see alerts that were triggered from the `scanthis.py` script.  
 
