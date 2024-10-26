@@ -11,11 +11,23 @@ To run these locally, you will need to have installed:
 
 ## Build and Run the Docker image
 
-Build an image with `docker build -t justatest .`
+### Building local image
 
-Run the image with `docker run -it -p 8080:5000/tcp justatest bash -c 'cd /app;. .venv/bin/activate;python3 promtest.py'`
+To build and run a local image:
 
-This will automatically initialize the `promtest.py` python script, which starts up a flask server on port 5000 in the docker container, accessible from `localhost:8080` on your local machine.
+ - Build an image with `docker build -t justatest .`
+
+ - Run the image with `docker run -it -p 8080:5000/tcp justatest bash -c 'cd /app;. .venv/bin/activate;python3 promtest.py'`
+
+### Running the pre-built image in the repo
+
+With each commit to this repo, Github actions will build and scan a new image, which you can run directly instead of building locally:
+
+`docker run -it -p 8080:5000/tcp justatest bash -c 'cd /app;. .venv/bin/activate;python3 promtest.py'`
+
+### After Running
+
+The commands above will automatically initialize the `promtest.py` python script in the container, which starts up a flask server on port 5000 inside the container, accessible from `localhost:8080` on your local machine.
 
 Accesing the `localhost:8080/` and `localhost:8080/other` endpoints will create OTel metrics, which prometheus can observe.  You can also go to `localhost:8080/events` to see the metrics directly.
 
