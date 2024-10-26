@@ -23,7 +23,7 @@ To build and run a local image:
 
 With each commit to this repo, Github actions will build and scan a new image, which you can run directly instead of building locally:
 
-`docker run -it -p 8080:5000/tcp justatest bash -c 'cd /app;. .venv/bin/activate;python3 promtest.py'`
+`docker run -it -p 8080:5000/tcp ghcr.io/crondaemon001/justatest123:latest bash -c 'cd /app;. .venv/bin/activate;python3 promtest.py'`
 
 ### After Running
 
